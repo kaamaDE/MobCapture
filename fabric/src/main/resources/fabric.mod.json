@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "mobcapture",
+  "version": "${version}",
+  "name": "MobCapture",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "Me!"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/mobcapture/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "de.kaama.fabric.ExampleModFabric"
+    ],
+    "client": [
+      "de.kaama.fabric.client.ExampleModFabricClient"
+    ]
+  },
+  "mixins": [
+    "mobcapture.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.17.2",
+    "minecraft": "~1.21.8",
+    "java": ">=21",
+    "architectury": ">=17.0.8",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
