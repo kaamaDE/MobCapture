@@ -9,7 +9,7 @@ version = "${version}"
 displayName = "MobCapture"
 authors = "Me!"
 description = '''
-This is an example description! Tell everyone what your mod is about!
+MobCapture introduces the Capturing enchantment, allowing players to collect mob spawn eggs by defeating creatures with enchanted swords. The chance to obtain a spawn egg increases with higher enchantment levels, making mob farming and collection easier and more rewarding. Boss mobs are excluded to maintain game balance. MobCapture supports both Fabric and NeoForge platforms and is available in multiple languages for a global Minecraft experience.
 '''
 #logoFile = ""
 

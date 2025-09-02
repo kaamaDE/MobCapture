@@ -53,3 +53,5 @@ build/
 # Windows
 Thumbs.db
 Desktop.ini
+
+run/

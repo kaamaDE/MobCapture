@@ -3,36 +3,30 @@
   "id": "mobcapture",
   "version": "${version}",
   "name": "MobCapture",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "MobCapture introduces the Capturing enchantment, allowing players to collect mob spawn eggs by defeating creatures with enchanted swords. The chance to obtain a spawn egg increases with higher enchantment levels, making mob farming and collection easier and more rewarding. Boss mobs are excluded to maintain game balance. MobCapture supports both Fabric and NeoForge platforms and is available in multiple languages for a global Minecraft experience.",
   "authors": [
-    "Me!"
+    "Kaama"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "",
+    "sources": ""
   },
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/mobcapture/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "de.kaama.fabric.ExampleModFabric"
+      "de.kaama.modcapture.fabric.MobCaptureModFabric"
     ],
     "client": [
-      "de.kaama.fabric.client.ExampleModFabricClient"
+      "de.kaama.modcapture.fabric.client.MobCaptureModFabricClient"
     ]
   },
-  "mixins": [
-    "mobcapture.mixins.json"
-  ],
   "depends": {
     "fabricloader": ">=0.17.2",
     "minecraft": "~1.21.8",
     "java": ">=21",
     "architectury": ">=17.0.8",
     "fabric-api": "*"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }
