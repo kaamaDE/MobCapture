@@ -2,7 +2,7 @@ package de.kaama.modcapture.enchantment;
 
 import dev.architectury.event.EventResult;
 import java.util.Optional;
-import net.minecraft.core.Holder;
+
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -31,8 +31,7 @@ public final class CapturingEnchantment {
     private static final double BASE_CHANCE = 0.05;
     private static final double CHANCE_PER_LEVEL = 0.05;
 
-    private CapturingEnchantment() {
-    }
+    private CapturingEnchantment() {}
 
     /**
      * An event listener that triggers when any living entity dies.
@@ -66,7 +65,7 @@ public final class CapturingEnchantment {
         }
 
         double chance = BASE_CHANCE + (level - 1) * CHANCE_PER_LEVEL;
-        
+
         if (player.getRandom().nextDouble() < chance) {
             trySpawnEgg(victim);
         }
