@@ -28,10 +28,11 @@ public final class CapturingEnchantment {
 
     public static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath("minecraft", "capturing");
 
-    private static final double BASE_CHANCE = 0.05; 
-    private static final double CHANCE_PER_LEVEL = 0.05; 
+    private static final double BASE_CHANCE = 0.05;
+    private static final double CHANCE_PER_LEVEL = 0.05;
 
-    private CapturingEnchantment() {}
+    private CapturingEnchantment() {
+    }
 
     /**
      * An event listener that triggers when any living entity dies.
@@ -56,29 +57,44 @@ public final class CapturingEnchantment {
         }
 
         Registry<Enchantment> registry = player.level().registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
-        Optional<Holder.Reference<Enchantment>> holder = registry.get(ID);
-        int level = holder.map(h -> EnchantmentHelper.getEnchantmentLevel(h, player)).orElse(0);
+        int level = registry.get(ID)
+                .map(h -> EnchantmentHelper.getEnchantmentLevel(h, player))
+                .orElse(0);
 
-        if (level > 0) {
-            double chance = BASE_CHANCE + (level - 1) * CHANCE_PER_LEVEL;
-            if (player.getRandom().nextDouble() < chance) {
-                Level world = victim.level();
-                if (!world.isClientSide) {
-                    Optional.ofNullable(SpawnEggItem.byId(victim.getType()))
-                            .ifPresent(egg -> {
-                                ItemEntity itemEntity = new ItemEntity(
-                                        world,
-                                        victim.getX(),
-                                        victim.getY(),
-                                        victim.getZ(),
-                                        new ItemStack(egg));
-                                world.addFreshEntity(itemEntity);
-                            });
-                }
-            }
+        if (level <= 0) {
+            return EventResult.pass();
+        }
+
+        double chance = BASE_CHANCE + (level - 1) * CHANCE_PER_LEVEL;
+        
+        if (player.getRandom().nextDouble() < chance) {
+            trySpawnEgg(victim);
         }
 
         return EventResult.pass();
+    }
+
+    /**
+     * Attempts to create a spawn egg at the victim's location.
+     *
+     * @param victim The entity whose spawn egg should be dropped.
+     */
+    private static void trySpawnEgg(LivingEntity victim) {
+        Level world = victim.level();
+
+        if (world.isClientSide)
+            return;
+
+        Optional.ofNullable(SpawnEggItem.byId(victim.getType()))
+                .ifPresent(egg -> {
+                    ItemEntity itemEntity = new ItemEntity(
+                            world,
+                            victim.getX(),
+                            victim.getY(),
+                            victim.getZ(),
+                            new ItemStack(egg));
+                    world.addFreshEntity(itemEntity);
+                });
     }
 
 }
