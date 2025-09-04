@@ -4,18 +4,17 @@ MobCapture introduces the Capturing enchantment, allowing players to collect mob
 
 ## Features
 - Chance increases with enchantment level
-- Supports Fabric and NeoForge
 - Available in multiple languages
-  
+
 ## Installation
 1. Download the mod from [Modrinth](https://modrinth.com/project/mobcapture).
-2. Download and install [Architectury API](https://modrinth.com/mod/architectury-api).
-3. Place both files in your `mods` folder.
-4. Make sure you have the required mod loader (Fabric or NeoForge) installed.
+2. Ensure you have the [Fabric API](https://modrinth.com/mod/fabric-api) installed.
+3. Place the MobCapture mod file in your `mods` folder.
+4. Make sure you have the Fabric mod loader installed.
 
 ## Links
 - [MobCapture on Modrinth](https://modrinth.com/project/mobcapture)
-- [Architectury API on Modrinth](https://modrinth.com/mod/architectury-api)
+- [Fabric API on Modrinth](https://modrinth.com/mod/fabric-api)
 
 ## License
 This project is licensed under the MIT License.

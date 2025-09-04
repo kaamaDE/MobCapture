@@ -1,57 +1,41 @@
-.gradle/
-/build/
-/dist/
-.project
-.classpath
-.settings/
-bin/
-target/
+# gradle
 
-# Java
-*.class
-*.jar
-*.war
-*.ear
-*.zip
-*.tar.gz
-*.log
-*.bak
-*.swp
-*~.
-.DS_Store
-.idea/
-.vscode/
-.iml
-.ipr
-.iws
-/out/
-/gen/
-
-# Gradle
 .gradle/
 build/
-**/*.iml
-.idea/workspace.xml
-.idea/libraries
-.idea/modules.xml
-.idea/gradle.xml
-.gradle-enterprise/
+out/
+classes/
 
-#STS
-.apt_generated
-.factorypath
-.springBeans
+# eclipse
 
-# Eclipse
-.project
-.classpath
+*.launch
+
+# idea
+
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# vscode
+
 .settings/
+.vscode/
+bin/
+.classpath
+.project
 
-# OSX
-.DS_Store
+# macos
 
-# Windows
-Thumbs.db
-Desktop.ini
+*.DS_Store
+
+# fabric
 
 run/
+
+# java
+
+hs_err_*.log
+replay_*.log
+*.hprof
+*.jfr
+versions/**/src/
