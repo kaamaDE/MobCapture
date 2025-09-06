@@ -18,9 +18,6 @@
     "main": [
       "de.kaama.mobcapture.MobCaptureMod"
     ],
-    "client": [
-      "de.kaama.mobcapture.client.MobCaptureClientMod"
-    ],
     "fabric-datagen": [
       "de.kaama.mobcapture.datagen.MobCaptureDatagen"
     ]

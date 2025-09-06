@@ -30,7 +30,7 @@ public class EnchantmentGenerator extends FabricDynamicRegistryProvider {
         // This block is active for Minecraft versions 1.21.2 and above.
         // It uses 'registries.getOrThrow(RegistryKeys.ITEM)'.
         /*? if >=1.21.2 {*/
-        register(entries, MobCaptureMod.CAPTURING_ENCHANTMENT_KEY, Enchantment.builder(
+        register(entries, MobCaptureMod.CAPTURING, Enchantment.builder(
                         Enchantment.definition(
                                 registries.getOrThrow(RegistryKeys.ITEM).getOrThrow(ItemTags.SWORDS),
                                 registries.getOrThrow(RegistryKeys.ITEM).getOrThrow(ItemTags.SWORDS),
@@ -52,7 +52,7 @@ public class EnchantmentGenerator extends FabricDynamicRegistryProvider {
         // This block is active for Minecraft versions 1.21 and 1.21.1 only.
         // It uses 'registries.getWrapperOrThrow(RegistryKeys.ITEM)'.
         /*? if <1.21.2 {*/
-        /*register(entries, MobCaptureMod.CAPTURING_ENCHANTMENT_KEY, Enchantment.builder(
+        /*register(entries, MobCaptureMod.CAPTURING, Enchantment.builder(
                         Enchantment.definition(
                                 registries.getWrapperOrThrow(RegistryKeys.ITEM).getOrThrow(ItemTags.SWORDS),
                                 registries.getWrapperOrThrow(RegistryKeys.ITEM).getOrThrow(ItemTags.SWORDS),
